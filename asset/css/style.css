@@ -1,0 +1,616 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 260px;
+    min-width: 260px;
+    min-height: 100vh;
+    background: #0f172a;
+    padding: 25px 15px;
+    color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px 25px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.logo img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.logo-text small {
+    display: block;
+    font-size: 9px;
+    color: #94a3b8;
+    margin-top: 3px;
+}
+
+/* MENU */
+.nav {
+    display: block;
+    width: 100%;
+    padding: 14px 16px;
+    margin: 8px 0;
+    border-radius: 12px;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 16px;
+    transition: .2s;
+}
+
+.nav:hover {
+    background: #1e293b;
+    color: white;
+}
+
+.nav.active {
+    background: #2563eb;
+    color: white;
+    font-weight: bold;
+}
+
+.nav.logout {
+    margin-top: 30px;
+    background: #334155;
+}
+
+.nav.logout:hover {
+    background: #475569;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.main {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    min-height: 100vh;
+    background: #f1f5f9;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar {
+    background: white;
+    min-height: 90px;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.topbar h2 {
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.topbar span {
+    color: #64748b;
+}
+
+.user {
+    background: #eff6ff;
+    color: #2563eb;
+    padding: 12px 18px;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+    padding: 30px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(15, 23, 42, .06);
+}
+
+.card span {
+    display: block;
+    color: #64748b;
+    margin-bottom: 10px;
+}
+
+.card strong {
+    font-size: 32px;
+    color: #2563eb;
+}
+
+/* =========================
+   PANEL
+========================= */
+
+.panel {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 20px rgba(15, 23, 42, .06);
+}
+
+.panel-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 15px;
+    background: white;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    margin-top: 18px;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #2563eb;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 13px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+th {
+    background: #f8fafc;
+}
+
+/* =========================
+   DETAIL
+========================= */
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.detail-grid > div {
+    background: #f8fafc;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.detail-grid b {
+    display: block;
+    margin-bottom: 6px;
+    color: #475569;
+}
+
+.detail-grid span {
+    display: block;
+}
+
+.detail-grid .full {
+    grid-column: 1 / -1;
+}
+
+.inline-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.inline-form select {
+    width: auto;
+}
+
+/* =========================
+   ALERT
+========================= */
+
+.success {
+    background: #dcfce7;
+    color: #166534;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.alert {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.welcome {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+}
+
+.welcome h3 {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.welcome p {
+    color: #64748b;
+}
+
+/* =========================
+   MOBILE / HP
+========================= */
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        width: 220px;
+        min-width: 220px;
+        position: fixed;
+        transform: translateX(0);
+    }
+
+    .main {
+        margin-left: 220px;
+        width: calc(100% - 220px);
+    }
+
+    .topbar {
+        padding: 15px;
+    }
+
+    .topbar h2 {
+        font-size: 20px;
+    }
+
+    .topbar span {
+        font-size: 13px;
+    }
+
+    .user {
+        display: none;
+    }
+
+    .content {
+        padding: 15px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .card strong {
+        font-size: 25px;
+    }
+
+    .panel {
+        padding: 18px;
+        overflow-x: auto;
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-grid .full {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .sidebar {
+        width: 190px;
+        min-width: 190px;
+    }
+
+    .main {
+        margin-left: 190px;
+        width: calc(100% - 190px);
+    }
+
+    .logo-text {
+        font-size: 18px;
+    }
+
+    .nav {
+        font-size: 13px;
+        padding: 12px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mode Hitam Putih */
+.topbar-actions{display:flex;align-items:center;gap:12px}
+.theme-toggle{border:1px solid #ccc;background:#fff;color:#222;border-radius:10px;padding:9px 12px;cursor:pointer;font-weight:600;transition:.2s}
+.theme-toggle:hover{transform:translateY(-1px)}
+body.blackwhite{background:#fff!important;color:#111!important}
+body.blackwhite .app,body.blackwhite .main,body.blackwhite .content,body.blackwhite .panel,body.blackwhite .card,body.blackwhite .table-wrap,body.blackwhite .form-card,body.blackwhite input,body.blackwhite select,body.blackwhite textarea{background:#fff!important;color:#111!important}
+body.blackwhite .sidebar{background:#000!important;color:#fff!important}
+body.blackwhite .sidebar .nav,body.blackwhite .sidebar .nav:hover,body.blackwhite .sidebar .nav.active,body.blackwhite .sidebar .nav.logout,body.blackwhite .logo,body.blackwhite .logo span{color:#fff!important}
+body.blackwhite .sidebar .nav.active,body.blackwhite .sidebar .nav:hover{background:#fff!important;color:#000!important}
+body.blackwhite .topbar{background:#fff!important;color:#000!important;border-bottom:2px solid #000!important}
+body.blackwhite .topbar span,body.blackwhite .user{color:#333!important}
+body.blackwhite .theme-toggle{background:#000!important;color:#fff!important;border-color:#000!important}
+body.blackwhite .btn,body.blackwhite button,body.blackwhite .badge,body.blackwhite .status{background:#000!important;color:#fff!important;border-color:#000!important}
+body.blackwhite a{color:#000}
+body.blackwhite table{color:#111!important;border-color:#000!important}
+body.blackwhite th{background:#000!important;color:#fff!important}
+body.blackwhite td{border-color:#000!important}
+body.blackwhite input,body.blackwhite select,body.blackwhite textarea{border-color:#000!important}
+@media(max-width:600px){.topbar-actions{gap:6px}.theme-toggle span{display:none}.theme-toggle{padding:9px 10px}}
+
+
+/* =========================================================
+   MODE HITAM PUTIH - VERSI KUAT UNTUK BROWSER HP
+   ========================================================= */
+html.blackwhite,
+body.blackwhite {
+    background: #fff !important;
+}
+
+html.blackwhite body.blackwhite,
+body.blackwhite {
+    color: #000 !important;
+}
+
+/* Menghapus semua warna sekaligus sebagai fallback yang pasti terlihat. */
+/* Jangan gunakan filter grayscale pada body.
+   Dengan begitu logo/gambar tetap memakai warna aslinya. */
+
+html.blackwhite body.blackwhite .theme-toggle,
+body.blackwhite .theme-toggle {
+    background: #000 !important;
+    color: #fff !important;
+    border: 1px solid #000 !important;
+    box-shadow: none !important;
+}
+
+html.blackwhite body.blackwhite .sidebar,
+body.blackwhite .sidebar {
+    background: #000 !important;
+    color: #fff !important;
+}
+
+html.blackwhite body.blackwhite .nav.active,
+html.blackwhite body.blackwhite .nav:hover,
+body.blackwhite .nav.active,
+body.blackwhite .nav:hover {
+    background: #fff !important;
+    color: #000 !important;
+}
+
+html.blackwhite body.blackwhite .topbar,
+body.blackwhite .topbar,
+html.blackwhite body.blackwhite .content,
+body.blackwhite .content,
+html.blackwhite body.blackwhite .card,
+body.blackwhite .card,
+html.blackwhite body.blackwhite .panel,
+body.blackwhite .panel,
+html.blackwhite body.blackwhite .welcome,
+body.blackwhite .welcome {
+    background: #fff !important;
+    color: #000 !important;
+}
+
+html.blackwhite body.blackwhite .btn,
+html.blackwhite body.blackwhite button:not(.theme-toggle),
+body.blackwhite .btn,
+body.blackwhite button:not(.theme-toggle) {
+    background: #000 !important;
+    color: #fff !important;
+    border-color: #000 !important;
+}
+
+/* =========================================================
+   FIX KOTAK / CARD MODE HITAM PUTIH
+   ========================================================= */
+html.blackwhite body.blackwhite .card,
+html.blackwhite body.blackwhite .panel,
+html.blackwhite body.blackwhite .welcome,
+html.blackwhite body.blackwhite .form-card,
+html.blackwhite body.blackwhite .table-wrap,
+html.blackwhite body.blackwhite .alert,
+html.blackwhite body.blackwhite .success,
+body.blackwhite .card,
+body.blackwhite .panel,
+body.blackwhite .welcome,
+body.blackwhite .form-card,
+body.blackwhite .table-wrap,
+body.blackwhite .alert,
+body.blackwhite .success {
+    background: #fff !important;
+    color: #000 !important;
+    border: 2px solid #000 !important;
+    box-shadow: 0 3px 0 #000 !important;
+    opacity: 1 !important;
+}
+
+/* Kartu statistik dibuat jelas sebagai kotak */
+html.blackwhite body.blackwhite .cards .card,
+body.blackwhite .cards .card {
+    border: 2px solid #000 !important;
+    border-radius: 12px !important;
+    box-shadow: 4px 4px 0 #000 !important;
+}
+
+/* Tabel tetap terlihat jelas */
+html.blackwhite body.blackwhite table,
+body.blackwhite table {
+    border-collapse: collapse !important;
+    border: 2px solid #000 !important;
+    background: #fff !important;
+}
+
+html.blackwhite body.blackwhite th,
+html.blackwhite body.blackwhite td,
+body.blackwhite th,
+body.blackwhite td {
+    border: 1px solid #000 !important;
+    color: #000 !important;
+    background: #fff !important;
+}
+
+html.blackwhite body.blackwhite th,
+body.blackwhite th {
+    background: #000 !important;
+    color: #fff !important;
+    border-color: #000 !important;
+}
+
+/* Badge/status tetap berbentuk kotak */
+html.blackwhite body.blackwhite .badge,
+html.blackwhite body.blackwhite .status,
+body.blackwhite .badge,
+body.blackwhite .status {
+    display: inline-block !important;
+    background: #000 !important;
+    color: #fff !important;
+    border: 1px solid #000 !important;
+    border-radius: 4px !important;
+    padding: 3px 7px !important;
+}
+
+/* Input dan form */
+html.blackwhite body.blackwhite input,
+html.blackwhite body.blackwhite select,
+html.blackwhite body.blackwhite textarea,
+body.blackwhite input,
+body.blackwhite select,
+body.blackwhite textarea {
+    background: #fff !important;
+    color: #000 !important;
+    border: 2px solid #000 !important;
+    box-shadow: none !important;
+}
+
+/* Link aksi pada tabel */
+html.blackwhite body.blackwhite a,
+body.blackwhite a {
+    color: #000 !important;
+}
+
+/* Supaya garis pembatas antar bagian tetap terlihat */
+html.blackwhite body.blackwhite .panel-title,
+body.blackwhite .panel-title {
+    color: #000 !important;
+    border-bottom: 2px solid #000 !important;
+}
+
+
+/* =========================================================
+   LOGO TETAP BERWARNA SAAT MODE HITAM PUTIH
+   ========================================================= */
+html.blackwhite body.blackwhite .logo,
+body.blackwhite .logo {
+    filter: none !important;
+}
+
+html.blackwhite body.blackwhite .logo img,
+body.blackwhite .logo img {
+    filter: none !important;
+    opacity: 1 !important;
+}
